@@ -469,8 +469,7 @@ class Cpp:
 
         for m in methods.items():
             self.add_nodes("method", m)
-
-            parent_fragments_locs = self.containers_structures_simple_names.get(m[1]["parent"]).get("fullLocs")
+            parent_fragments_locs = self.containers_structures_simple_names.get(m[1]["parent"], {}).get("fullLocs")
             if parent_fragments_locs:
                 
                 for parent_loc in parent_fragments_locs:
